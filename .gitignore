@@ -1,0 +1,21 @@
+# Compiled source #
+###################
+*.class
+*.dll
+*.o
+
+# Packages #
+############
+*.jar
+*.zip
+*.dmg
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+
+.metadata
+.classpath
+.project
+.settings

@@ -1,0 +1,32 @@
+# 0/1 Knapsack problem
+#Compiled by Java11
+
+There is a class com.mobiquity.packer.Packer with a static API method named pack. This method accepts the absolute path to a test file as a String and returns the solution as a String. The method should throw an com.mobiquity.exception.APIException if incorrect parameters are passed.
+
+To solve the problem I used the dynamic programming approach. I implement this algorithm in PackServiceImpl file and I have a dynamicArray there as a table to store the solutions of solved subproblems without having to solve them again.
+
+I have two my own data structures, Pack and PackData. Pack has an array of PackData type, which each element in this array is related to each thing in the pack sorted in ascending order of weight. Pack is holding the information of each pack, as limitedWeight, indexList, weightList and costList. 
+
+I implement an interface called PackService that loads all packs by the use of PackRepository, and runs the knapsack algorithm for each pack. I implement the packRepository interface so that it gets the name of file, loads the data in a file with FileReader. 
+
+FileReader interface is implemented to get a file path. It uses java.nio.file package to read lines from file. I use try-with-resource so it does not need to close file explicitly.
+
+After reading a file I have an interface that tokenize each line according to the specified delimiters. All delimiters and messages and other configs in the project are in messages.properties and config.properties files so that for example messages could be replaced by another language file easily.
+
+The outputGenerator generates the output as it is mentioned in the assignment.
+
+I use SOLID principle and I try to perform clean code.
+
+Constraints that are checked are:
+
+1. Max weight that a package can take is ? 100
+2. There might be up to 15 items you need to choose from
+3. Max weight and cost of an item is ? 100
+
+and of course I assume that index, weight, limited weight and cost are positive numbers.
+
+The test coverage is 93.4
+
+To test this assignment just add the maven dependency and enjoy it.
+
+Please do not hesitate to contact me for any possible question. 
